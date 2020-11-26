@@ -2,12 +2,20 @@ var readlineSync = require("readline-sync");
 const chalk = require("chalk");
 
 var playerName = readlineSync.question(
-  "Namaste! Give me your name Please\n=> "
+  chalk.yellowBright("🙏  Namaste! Give me your name Please 🙏\n=> ")
 );
-console.log(`\nWelcome! to ${`"DO YOU KNOW ME"`} Quiz Game ${playerName}`);
+console.log(
+  chalk.bold.underline.cyanBright(
+    `\n👋  Welcome! to ${chalk.yellow(
+      `"DO YOU KNOW ME"`
+    )} Quiz Game ${chalk.bold.yellowBright(playerName)}`
+  )
+);
 
 console.log(
-  `\nRules:-\n1. Total number of Questions 5\n2. Each Question has 2 points for answering correct\n3. There is no negative marking for wrong answer`
+  chalk.magentaBright(
+    `\nRules:-\n1. Total number of Questions 5\n2. Each Question has 2 points for answering correct\n3. There is no negative marking for wrong answer`
+  )
 );
 
 if (
@@ -16,7 +24,7 @@ if (
   )
 ) {
 } else {
-  console.log("\n Oh no!! You exit from the game");
+  console.log(chalk.red.bold("\n😔 😔  Oh no!! You exit from the game"));
   process.exit();
 }
 
@@ -26,39 +34,47 @@ var play = (question, answer) => {
   var playerAnswer = readlineSync.question(question);
 
   if (playerAnswer.toUpperCase() === answer.toUpperCase()) {
-    console.log("\nCongrats!! You are Correct");
+    console.log(chalk.green.bold("\nCongrats!! You are Correct 👍 👍"));
     score = score + 2;
   } else {
-    console.log("\nOops!! You are Wrong");
+    console.log(chalk.red.bold("\nOops!! You are Wrong 👎 👎"));
   }
 
-  console.log(`Current score is: ${score} `);
+  console.log(
+    chalk.bgMagentaBright.black.bold(
+      `Current score is: ${chalk.red.bold(score)} `
+    )
+  );
   console.log("         ----------------     \n");
 };
 
 var questionSet = [
   {
-    question: "\nQ.1 Which State I am from?\n=> ",
+    question: chalk.yellowBright("\nQ.1 Which State I am from?\n=> "),
     answer: "West Bengal",
   },
 
   {
-    question: "Q.2 Where do I currently live?\n=> ",
+    question: chalk.yellowBright("Q.2 Where do I currently live?\n=> "),
     answer: "Chennai",
   },
 
   {
-    question: "Q.3 What is my favourite Programming Language?\n=> ",
+    question: chalk.yellowBright(
+      "Q.3 What is my favourite Programming Language?\n=> "
+    ),
     answer: "Javascript",
   },
 
   {
-    question: "Q.4 What is my favourite Web Series?\n=> ",
+    question: chalk.yellowBright("Q.4 What is my favourite Web Series?\n=> "),
     answer: "Breaking Bad",
   },
 
   {
-    question: "Q.5 Who is my favourite Marvel Superhero?\n=> ",
+    question: chalk.yellowBright(
+      "Q.5 Who is my favourite Marvel Superhero?\n=> "
+    ),
     answer: "Iron Man",
   },
 ];
@@ -68,14 +84,20 @@ for (var i = 0; i < questionSet.length; i++) {
   play(currentQuestion.question, currentQuestion.answer);
 }
 
-console.log("Your final score is: ", score);
+console.log(
+  chalk.cyanBright.bold("Your final score is: ", chalk.red.bold(score))
+);
 
 if (score === 10) {
-  console.log("\nWow!! You have answered all correct\nYou are a close Friend");
+  console.log(
+    chalk.yellowBright(
+      "\n🤩 🤩  Wow!! You have answered all correct 🎉 🎉\n🤗  You are a close Friend 🤗"
+    )
+  );
 } else if (score <= 4) {
-  console.log("\nYou don't know much about me");
+  console.log(chalk.yellowBright("\n😔  You don't know much about me 😔"));
 } else {
-  console.log("\nYou are a good friend");
+  console.log(chalk.yellowBright("\n😊  You are a good friend 😊"));
 }
 
 var leaderBoard = [
@@ -102,13 +124,29 @@ var leaderBoard = [
 
 for (let i = 0; i < leaderBoard.length; i++) {
   if (leaderBoard[i].score < score) {
-    console.log(`\nCongrats! ${playerName} you have broken records`);
+    console.log(
+      chalk.cyan.bold(
+        `\n🎉  Congrats! ${chalk.red.bold(
+          playerName
+        )} you have broken records 🎉`
+      )
+    );
     break;
   }
 }
 
 console.log(
-  `\n${"=>>"} Please sent a screenshort of your score, so that I can update the LeaderBoard.`
+  chalk.magentaBright(
+    `\n${chalk.red.bold(
+      "=>>"
+    )} Please sent a screenshort of your score, so that I can update the LeaderBoard.`
+  )
 );
 
-console.log(`\n\nThanks for playing ${playerName} Hope you enjoyed!!!`);
+console.log(
+  chalk.yellow.bold(
+    `\n\n🙏 🙏  Thanks for playing ${chalk.red.bold(
+      playerName
+    )} 😊  Hope you enjoyed!!!`
+  )
+);
