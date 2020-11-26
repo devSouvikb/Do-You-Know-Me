@@ -70,4 +70,12 @@ for (var i = 0; i < questionSet.length; i++) {
 
 console.log("Your final score is: ", score);
 
+if (score === 10) {
+  console.log("\nWow!! You have answered all correct\nYou are a close Friend");
+} else if (score <= 4) {
+  console.log("\nYou don't know much about me");
+} else {
+  console.log("\nYou are a good friend");
+}
+
 console.log(`\n\nThanks for playing ${playerName} Hope you enjoyed!!!`);
