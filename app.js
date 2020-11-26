@@ -10,6 +10,16 @@ console.log(
   `\nRules:-\n1. Total number of Questions 5\n2. Each Question has 2 points for answering correct\n3. There is no negative marking for wrong answer`
 );
 
+if (
+  readlineSync.keyInYN(
+    chalk.bgWhite.black.bold(`\nLets Play!!! ${playerName} `)
+  )
+) {
+} else {
+  console.log("\n Oh no!! You exit from the game");
+  process.exit();
+}
+
 var score = 0;
 
 var play = (question, answer) => {
