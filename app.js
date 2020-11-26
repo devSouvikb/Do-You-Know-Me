@@ -78,4 +78,26 @@ if (score === 10) {
   console.log("\nYou are a good friend");
 }
 
+var leaderBoard = [
+  {
+    name: "Souvik",
+    score: 10,
+  },
+
+  {
+    name: "Rahul",
+    score: 10,
+  },
+
+  {
+    name: "Mahir",
+    score: 8,
+  },
+
+  {
+    name: "Sahil",
+    score: 5,
+  },
+];
+
 console.log(`\n\nThanks for playing ${playerName} Hope you enjoyed!!!`);
