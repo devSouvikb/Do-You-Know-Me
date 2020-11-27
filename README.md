@@ -10,6 +10,6 @@ It's a 5 question Quiz Game which asks questions about me to test how much do yo
 
 [Do You Know Me](https://repl.it/@SouvikBiswas1/CLIQuizApp?embed=1&output=1#index.js)
 
-### Screenshort
+### Screenshot
 
-<img src="img/DoYouKnowMe.jpg" width="300" height="900"/>
+<img src="img/DoYouKnowMe.jpg" width="200" height="600"/>
